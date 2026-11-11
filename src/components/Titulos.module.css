@@ -1,0 +1,7 @@
+.contenedor {
+  background-color: var(--clr-bg);
+}
+
+.titulo {
+  background-color: var(--clr-card-bg);
+}

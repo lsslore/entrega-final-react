@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Paleta oscura con acentos verde neón */
+  --clr-bg: #0b0d0b;
+  --clr-surface: #1b201b;
+  --clr-card-bg: #292f29;
+  --clr-border: #3a433a;
+  --clr-border-hover: #00ff66;
+
+  --clr-text: #f1f5ef;
+  --clr-muted: #a0aaa0;
+  --clr-accent: #00ff66;
+  --clr-accent-hover: #3dff8d;
+  --clr-danger: #ff6b6b;
+
+  /* Tipografía Moderna */
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Sombras UI/UX */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.4);
+
+  /* Transición estándar */
+  --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Tipografía de Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--clr-accent);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+/* Enlaces sin subrayados feos y con foco suave */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+button:not([class]) {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--clr-accent);
+  border-radius: 8px;
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+  font-weight: 600;
+}
+
+button:not([class]):hover:not(:disabled) {
+  background-color: var(--clr-accent-hover);
+  border-color: var(--clr-accent-hover);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--clr-text);
+  background-color: var(--clr-card-bg);
+  border-color: var(--clr-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--clr-muted);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--clr-border);
+  margin: 2.5rem 0;
+  width: 100%;
+}

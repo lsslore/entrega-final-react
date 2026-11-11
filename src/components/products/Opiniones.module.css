@@ -1,0 +1,136 @@
+.opinionesContainer {
+  width: 100%;
+  min-width: 0;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--clr-border);
+  box-sizing: border-box;
+}
+
+.titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.cargando,
+.error,
+.sinOpiniones {
+  padding: 1rem 0;
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.listaOpiniones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.opinionCard {
+  min-width: 0;
+  background-color: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.opinionCard:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.headerOpinion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.clienteNombre {
+  font-weight: 600;
+  color: var(--clr-text);
+  font-size: 1rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f59e0b; /* Color dorado estrellas */
+  background-color: #34321b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.comentario {
+  color: var(--clr-muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Ajustes para tabletas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .opinionesContainer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 1.35rem;
+  }
+
+  .opinionCard {
+    padding: 1rem;
+  }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 480px) {
+  .opinionesContainer {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .titulo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .listaOpiniones {
+    gap: 0.75rem;
+  }
+
+  .opinionCard {
+    padding: 0.9rem;
+  }
+
+  .headerOpinion {
+    align-items: flex-start;
+  }
+
+  .clienteNombre {
+    font-size: 0.95rem;
+  }
+
+  .rating,
+  .comentario,
+  .cargando,
+  .error,
+  .sinOpiniones {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,255 @@
+.footer {
+  width: 100%;
+  background-color: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+  padding: 2rem clamp(1rem, 3vw, 1.5rem) 1rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  overflow-wrap: anywhere;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  background-color: var(--clr-surface);
+}
+
+.footerSection h4 {
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footerSection p {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Newsletter */
+.newsletterInput {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.newsletterInput input {
+  min-width: 0;
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  flex: 1;
+}
+
+.newsletterInput input:focus {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 2px rgb(0 255 102 / 18%);
+}
+
+.newsletterInput button {
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Tarjetas de Integrantes */
+.teamContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.teamCard {
+  min-width: 0;
+  background: var(--clr-card-bg);
+  border: 1px solid var(--clr-border);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  flex: 1;
+}
+
+.teamCard img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-accent);
+  background-color: var(--clr-accent);
+  box-shadow: 0 0 10px rgb(0 255 102 / 25%);
+  object-fit: cover;
+  margin-bottom: 0.3rem;
+}
+
+.teamCard h5 {
+  color: var(--clr-accent);
+  font-size: 0.8rem;
+  
+}
+
+.teamCard span {
+  color: var(--clr-muted);
+  font-size: 0.7rem;
+  display: block;
+}
+
+/* Bottom / Legales */
+.footerBottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--clr-border);
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footerBottom p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .footerSection:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .teamContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .footer {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerSection:last-child {
+    grid-column: auto;
+  }
+
+  .footerSection {
+    padding: 1rem;
+  }
+
+  .newsletterInput {
+    flex-wrap: wrap;
+  }
+
+  .newsletterInput input {
+    flex-basis: 100%;
+  }
+
+  .newsletterInput button {
+    width: 100%;
+  }
+
+  .teamContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .teamCard {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.75rem;
+    text-align: left;
+  }
+
+  .teamCard img {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .footerBottom {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+
+/*
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--clr-border);
+  padding: 3rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--clr-bg);
+}
+
+.footerNav {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footerItem {
+  display: inline-block;
+}
+
+.footerLink {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.copyrightContainer {
+  text-align: center;
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-muted);
+}
+
+.brand {
+  font-family: var(--font-serif);
+  color: var(--clr-text);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .footerNav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}*/

@@ -1,0 +1,376 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  border-bottom: 1px solid var(--clr-border);
+  margin-bottom: 2rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--clr-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: var(--clr-text);
+}
+
+.activeTab {
+  color: var(--clr-accent);
+  font-weight: 600;
+  border-bottom-color: var(--clr-accent);
+}
+
+/* Tab Productos Header */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Botón Principal (Negro) */
+.btnPrimary {
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+  border: 1px solid var(--clr-accent);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--clr-accent-hover);
+}
+
+/* Tabla de Productos */
+.tableContainer {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table th {
+  background-color: var(--clr-card-bg);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--clr-border);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.productImg {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--clr-border);
+}
+
+/* Botones Secundarios */
+.btnOutline {
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btnOutline:hover {
+  border-color: var(--clr-accent);
+}
+
+.btnDanger {
+  background: transparent;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnDanger:hover {
+  background-color: #e53e3e;
+  color: #fff;
+}
+
+/* Modal Overlay & Card */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  background-color: var(--clr-card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.btnClose {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--clr-muted);
+}
+
+.btnClose:hover {
+  color: var(--clr-text);
+}
+
+.emptyText {
+  text-align: center;
+  padding: 3rem;
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--clr-card-bg);
+  color: var(--clr-text);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2000;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 0;
+  }
+
+  .sectionHeader {
+    align-items: stretch;
+  }
+
+  .sectionHeader > * {
+    width: 100%;
+  }
+
+  .tableContainer {
+    overflow: visible;
+    border: 0;
+  }
+
+  .table {
+    display: block;
+    min-width: 0;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .table tbody {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .table tr {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid var(--clr-border);
+    border-radius: 10px;
+    background-color: var(--clr-surface);
+  }
+
+  .table td {
+    display: flex;
+    min-width: 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+    border: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    color: var(--clr-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .table td[data-label="Imagen"] {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    justify-content: center;
+    padding-right: 0.5rem;
+  }
+
+  .table td[data-label="Imagen"]::before {
+    content: none;
+  }
+
+  .table td[data-label="Nombre"] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .table td[data-label="Categoría"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .table td[data-label="Precio"] {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .table .actionsCell {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .table .actionsCell::before {
+    margin-right: auto;
+  }
+
+  .productImg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .btnOutline,
+  .btnDanger {
+    margin: 0;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .modalContent {
+    width: 100%;
+    max-height: 85vh;
+    max-height: 85dvh;
+    padding: 1.25rem;
+  }
+
+  .toast {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    justify-content: center;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
